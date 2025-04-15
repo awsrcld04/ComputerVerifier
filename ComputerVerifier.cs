@@ -121,46 +121,6 @@ namespace ComputerVerifier
             }
         }
 
-        static bool funcLicenseActivation()
-        {
-            try
-            {
-                if (funcCheckForFile("TurboActivate.dll"))
-                {
-                    if (funcCheckForFile("TurboActivate.dat"))
-                    {
-                        TurboActivate.VersionGUID = "4935355894e0da3d4465e86.37472852";
-
-                        if (TurboActivate.IsActivated())
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            Console.WriteLine("A license for this product has not been activated.");
-                            return false;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("TurboActivate.dat is required and could not be found.");
-                        return false;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("TurboActivate.dll is required and could not be found.");
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-                MethodBase mb1 = MethodBase.GetCurrentMethod();
-                funcGetFuncCatchCode(mb1.Name, ex);
-                return false;
-            }
-        }
-
         static void funcLogToEventLog(string strAppName, string strEventMsg, int intEventType)
         {
             string sLog;
