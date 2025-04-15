@@ -143,7 +143,7 @@ namespace ComputerVerifier
 
         static void funcPrintParameterSyntax()
         {
-            Console.WriteLine("ComputerVerifier (c) 2011 SystemsAdminPro.com");
+            Console.WriteLine("ComputerVerifier");
             Console.WriteLine();
             Console.WriteLine("Parameter syntax:");
             Console.WriteLine();
