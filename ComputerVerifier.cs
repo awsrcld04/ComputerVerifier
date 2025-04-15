@@ -575,31 +575,6 @@ namespace ComputerVerifier
             }
         }
 
-        static void funcProgramRegistryTag(string strProgramName)
-        {
-            try
-            {
-                string strRegistryProfilesPath = "SOFTWARE";
-                RegistryKey objRootKey = Microsoft.Win32.Registry.LocalMachine;
-                RegistryKey objSoftwareKey = objRootKey.OpenSubKey(strRegistryProfilesPath, true);
-                RegistryKey objSystemsAdminProKey = objSoftwareKey.OpenSubKey("SystemsAdminPro", true);
-                if (objSystemsAdminProKey == null)
-                {
-                    objSystemsAdminProKey = objSoftwareKey.CreateSubKey("SystemsAdminPro");
-                }
-                if (objSystemsAdminProKey != null)
-                {
-                    if (objSystemsAdminProKey.GetValue(strProgramName) == null)
-                        objSystemsAdminProKey.SetValue(strProgramName, "1", RegistryValueKind.String);
-                }
-            }
-            catch (Exception ex)
-            {
-                MethodBase mb1 = MethodBase.GetCurrentMethod();
-                funcGetFuncCatchCode(mb1.Name, ex);
-            }
-        }
-
         static void funcGetFuncCatchCode(string strFunctionName, Exception currentex)
         {
             string strCatchCode = "";
