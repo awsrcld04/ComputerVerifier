@@ -321,8 +321,6 @@ namespace ComputerVerifier
             {
                 funcLogToEventLog("ComputerVerifier", "ComputerVerifier started", 1001);
 
-                funcProgramRegistryTag("ComputerVerifier");
-
                 ComputerLoginParams newParams = funcParseConfigFile(objCMDArguments2);
 
                 funcCheckComputerLogin(newParams);
